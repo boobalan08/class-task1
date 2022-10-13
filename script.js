@@ -1,15 +1,15 @@
 var table = createTable("table","class","table");
 var thead = createThead("thead","class","thead-dark");
 var tbody = createTbody("tbody");
-var trow1 = createTrow1("tr");
-var trow2= createTrow2("tr");
-var th1= createTh1("th","scope","col");
-var th2= createTh2("th","scope","col");
-var th3= createTh3("th","scope","col");
+var trow1 = createTrow("tr");
+var trow2= createTrow("tr");
+var th1= createTh("th","scope","col","First Name");
+var th2= createTh("th","scope","col","Middle Name");
+var th3= createTh("th","scope","col","Last Name");
 
-var td1= createTd1("td");
-var td2= createTd2("td");
-var td3= createTd3("td");
+var td1= createTd("td","Boo");
+var td2= createTd("td","Balan");
+var td3= createTd("td","S");
 
 function createTable(tagName,attrName,attrValue){
 var ele=document.createElement(tagName);
@@ -27,49 +27,25 @@ function createTbody(tagName){
     var ele=document.createElement(tagName);
     return ele;
 }
-function createTrow1(tagName){
-    var ele=document.createElement(tagName);
-    return ele;
-}
-function createTrow2(tagName){
+function createTrow(tagName){
     var ele=document.createElement(tagName);
     return ele;
 }
 
-function createTh1(tagName,attrName,attrValue){
+function createTh(tagName,attrName,attrValue,content){
     var ele=document.createElement(tagName);
     ele.setAttribute(attrName,attrValue);
-    ele.innerHTML=`First Name`
-    return ele;
-    }
-function createTh2(tagName,attrName,attrValue){
-    var ele=document.createElement(tagName);
-    ele.setAttribute(attrName,attrValue);
-    ele.innerHTML=`Middle Name`
-    return ele;
-    }
-function createTh3(tagName,attrName,attrValue){
-    var ele=document.createElement(tagName);
-    ele.setAttribute(attrName,attrValue);
-    ele.innerHTML=`Last Name`
+    ele.innerHTML=content;
     return ele;
     }
 
-    function createTd1(tagName){
+
+    function createTd(tagName,content){
         var ele=document.createElement(tagName);
-        ele.innerHTML=`Boo`
+        ele.innerHTML=content;
         return ele;
     }
-    function createTd2(tagName){
-        var ele=document.createElement(tagName);
-        ele.innerHTML=`Balan`
-        return ele;
-    }
-    function createTd3(tagName){
-        var ele=document.createElement(tagName);
-        ele.innerHTML=`S`
-        return ele;
-    }
+  
 
 table.append(thead,tbody);
 thead.append(trow1);
